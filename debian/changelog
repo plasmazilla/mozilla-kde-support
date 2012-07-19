@@ -1,0 +1,65 @@
+kmozillahelper (0.6.3-0ubuntu0) quantal; urgency=low
+
+  * Ubuntu build
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Thu, 19 Jul 2012 11:15:29 +0200
+
+kmozillahelper (0.6.3-1netrunner1) dryland-se; urgency=low
+
+  * Initial dryland-se release
+
+ -- Frederic Gaudet <fred@linuxmint.com>  Wed, 25 Apr 2012 18:04:48 +0200
+
+kmozillahelper (0.6.2-0ubuntu2) maverick; urgency=low
+
+  * Rename binary package to firefox-kde-support and provide a transitional
+    package. (LP: #559154)
+  * Update description to make clear that the KDE integration only works
+    with Firefox. (LP: #566867)
+  * Suggest firefox instead of depending on it so the package can be installed
+    by default on Kubuntu.
+  * Add a watch file.
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Tue, 01 Jun 2010 19:09:43 +0200
+
+kmozillahelper (0.6.2-0ubuntu1) maverick; urgency=low
+
+  * New upstream release:
+    - Mimetype detection fixes
+    - Sets the bug address to Novell's bug tracker (LP: #582723)
+    - Refresh 01_default_browser.diff
+    - Drop 02_filter_escape_slash.diff, applied upstream
+    - Drop 03_save_local_file.diff, applied upstream
+    - Drop 04_open_file_cancel.diff, applied upstream
+    - Add 02_add_cmakelists_txt.diff to add a CMakeLists.txt file in the top
+      directory, which is needed for kmozillahelper to build
+    - Remove RPATH-skip override in debian/rules, pkg-kde-tools handles this
+      now, and the override was causing FTBFS
+  * Switch to source format 3.0 (quilt):
+    - Remove quilt build-dependency
+    - Remove now-obsolete README.source
+    - Remove redundant --with quilt flag from debian/rules
+
+ -- Jonathan Thomas <echidnaman@kubuntu.org>  Mon, 31 May 2010 10:17:57 -0400
+
+kmozillahelper (0.6-0ubuntu3) lucid; urgency=low
+
+  * Add 04_open_file_cancel.diff so kmozillahelper doesn't return "/" when
+    the user cancels a file open dialog.
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Thu, 01 Apr 2010 00:17:44 +0200
+
+kmozillahelper (0.6-0ubuntu2) lucid; urgency=low
+
+  * Add 02_filter_escape_slash.diff to correctly display slashes in
+    filter descriptions.
+  * Add 03_save_local_file.diff so Firefox doesn't add unneeded
+    slashes at the beginning of file pathes.
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Tue, 23 Mar 2010 14:02:07 +0100
+
+kmozillahelper (0.6-0ubuntu1) lucid; urgency=low
+
+  * Initial release.  LP: #494067
+
+ -- Felix Geyer <debfx-pkg@fobos.de>  Wed, 03 Mar 2010 18:44:26 +0100
