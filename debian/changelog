@@ -1,3 +1,9 @@
+kmozillahelper (0.6.4-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 19 Oct 2012 13:29:11 +0530
+
 kmozillahelper (0.6.3-0ubuntu0) quantal; urgency=low
 
   * Ubuntu build
