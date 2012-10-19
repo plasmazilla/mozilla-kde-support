@@ -44,13 +44,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <kshell.h>
 #include <kstandarddirs.h>
 #include <kwindowsystem.h>
+#include <kprocess.h>
 #include <stdio.h>
 #include <unistd.h>
 
 //#define DEBUG_KDE
 
 #define HELPER_VERSION 6
-#define APP_HELPER_VERSION "0.6.3"
+#define APP_HELPER_VERSION "0.6.4"
 
 int main( int argc, char* argv[] )
     {
@@ -119,6 +120,8 @@ void App::readCommand()
         status = handleGetDirectoryX( true );
     else if( command == "OPEN" )
         status = handleOpen();
+    else if( command == "REVEAL" )
+        status = handleReveal();
     else if( command == "RUN" )
         status = handleRun();
     else if( command == "GETDEFAULTFEEDREADER" )
@@ -338,7 +341,10 @@ bool App::handleGetOpenX( bool url )
             {
             outputLine( QString::number( dialog.filterWidget()->currentIndex()));
             foreach( const KUrl& str, result )
-                outputLine( str.toLocalFile());
+              {
+              KUrl newUrl = KIO::NetAccess::mostLocalUrl(str, NULL);
+              outputLine( newUrl.toLocalFile() );
+              }
             return true;
             }
         }
@@ -463,6 +469,32 @@ bool App::handleOpen()
     //    QObject::connect( run, SIGNAL( error()), &app, SLOT( openDone()));
         return true; // TODO check for errors?
         }
+    }
+
+bool App::handleReveal()
+    {
+    if( !readArguments( 1 ))
+        return false;
+    QString path = getArgument();
+    if( !allArgumentsUsed())
+        return false;
+    KApplication::updateUserTimestamp( 0 ); // TODO
+    const KService::List apps = KMimeTypeTrader::self()->query("inode/directory", "Application");
+    if (apps.size() != 0)
+        {
+        QString command = apps.at(0)->exec().split( " " ).first(); // only the actual command
+        if (command == "dolphin" || command == "konqueror")
+            {
+            command = KStandardDirs::findExe( command );
+            if( command.isEmpty())
+                return false;
+            return KProcess::startDetached(command, QStringList() << "--select" << path);
+            }
+        }
+    QFileInfo info(path);
+    QString dir = info.dir().path();
+    (void) new KRun( KUrl(dir), NULL ); // TODO parent
+    return true; // TODO check for errors?
     }
 
 bool App::handleRun()

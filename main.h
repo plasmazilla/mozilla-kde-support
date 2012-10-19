@@ -47,6 +47,7 @@ class App
         bool handleGetSaveX( bool url );
         bool handleGetDirectoryX( bool url );
         bool handleOpen();
+        bool handleReveal();
         bool handleRun();
         bool handleGetDefaultFeedReader();
         bool handleOpenMail();
