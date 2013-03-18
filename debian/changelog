@@ -1,3 +1,9 @@
+firefox-kde-support (0.6.4-0ubuntu2) UNRELEASED; urgency=low
+
+  * Switch source package name to firefox-kde-support
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 18 Mar 2013 07:46:39 +0530
+
 kmozillahelper (0.6.4-0ubuntu1) quantal; urgency=low
 
   * New upstream release
