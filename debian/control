@@ -16,3 +16,9 @@ Description: Integration of Mozilla products with KDE
  This is a helper application that allows Mozilla products to use
  KDE file dialogs, file associations, protocol handlers and
  other KDE integration features.
+
+Package: firefox-kde-support
+Architecture: any
+Depends: mozilla-kde-support, ${shlibs:Depends}
+Description: transitional package for mozilla-kde-support
+ This package can be safely removed after installation.
