@@ -1,4 +1,4 @@
-firefox-kde-support (0.6.4-0ubuntu2) UNRELEASED; urgency=low
+mozilla-kde-support (0.6.4-0ubuntu2) UNRELEASED; urgency=low
 
   * Switch source package name to firefox-kde-support
 
