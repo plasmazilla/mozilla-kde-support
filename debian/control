@@ -11,6 +11,8 @@ Homepage: https://github.com/moz-plasma/firefox-plasma-support
 
 Package: mozilla-kde-support
 Architecture: any
+Breaks: firefox-kde-support (<< 0.6.4~git20150128)
+Replaces: firefox-kde-support (<< 0.6.4~git20150128)
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Integration of Mozilla products with KDE
  This is a helper application that allows Mozilla products to use
