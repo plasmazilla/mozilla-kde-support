@@ -5,6 +5,7 @@ Firefox is patched with this:
 http://www.rosenauer.org/hg/mozilla/
 
 kmozillahelper-code:
+https://github.com/openSUSE/kmozillahelper
 https://build.opensuse.org/package/show?package=MozillaFirefox&project=openSUSE%3AFactory
 
 Bugs: https://bugs.launchpad.net/firefox-kde-support/+bug/949949
