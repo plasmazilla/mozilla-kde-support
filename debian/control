@@ -2,10 +2,14 @@ Source: mozilla-kde-support
 Section: web
 Priority: optional
 Maintainer: Rohan Garg <rohangarg@kubuntu.org>
-Build-Depends: debhelper (>= 7.3.16~),
-               pkg-kde-tools (>= 0.5.0~),
-               cmake,
-               kdelibs5-dev
+Build-Depends: cmake,
+               debhelper (>= 7.3.16~),
+               extra-cmake-modules,
+               kio-dev,
+               libkf5i18n-dev,
+               libkf5notifications-dev,
+               libkf5windowsystem-dev,
+               pkg-kde-tools (>= 0.5.0~)
 Standards-Version: 3.9.3
 Homepage: https://github.com/moz-plasma/firefox-plasma-support
 
@@ -13,7 +17,7 @@ Package: mozilla-kde-support
 Architecture: any
 Breaks: firefox-kde-support (<< 0.6.4~git20150129)
 Replaces: firefox-kde-support (<< 0.6.4~git20150129)
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Integration of Mozilla products with KDE
  This is a helper application that allows Mozilla products to use
  KDE file dialogs, file associations, protocol handlers and
