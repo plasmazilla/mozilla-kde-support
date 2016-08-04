@@ -11,7 +11,7 @@ Build-Depends: cmake,
                libkf5windowsystem-dev,
                pkg-kde-tools (>= 0.5.0~)
 Standards-Version: 3.9.3
-Homepage: https://github.com/moz-plasma/firefox-plasma-support
+Homepage: https://github.com/openSUSE/kmozillahelper/
 
 Package: mozilla-kde-support
 Architecture: any
